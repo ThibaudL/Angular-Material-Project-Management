@@ -1,0 +1,26 @@
+extends layout
+block body
+
+    div(ng-app='myApp')
+        div(ng-controller='myAppController')
+    include ../public/angularApp/composant/menu/template/menu.html
+
+    script(src='javascripts/material.js')
+    script(src='javascripts/angular-1-4-2.min.js')
+    script(src='javascripts/angular-resource-1-4-2.min.js')
+    script(src='javascripts/angular-route-1-4-2.min.js')
+    script(src='javascripts/angular-animate-1-4-2.min.js')
+    script(src='javascripts/angular-aria-1-4-2.min.js')
+    script(src='javascripts/angular-material.min.js')
+    script(src='angularApp/app.js')
+
+    script(src='angularApp/composant/menu/controller/MenuController.js')
+
+    script(src='angularApp/screens/login/controller/LoginController.js')
+    script(src='angularApp/screens/home/controller/HomeController.js')
+
+    script(src='angularApp/services/loginService.js')
+    script(src='angularApp/services/repositoryService.js')
+    script(src='angularApp/services/issueService.js')
+    script(src='angularApp/services/milestoneService.js')
+    script(src='angularApp/services/labelService.js')
