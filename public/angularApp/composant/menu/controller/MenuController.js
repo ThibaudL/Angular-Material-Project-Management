@@ -1,8 +1,10 @@
-var menuControllerModule = angular.module('MenuControllerModule' ,['ngMaterial', 'loginServiceModule','repositoryServiceModule','issueServiceModule','milestoneServiceModule']);
+var menuControllerModule = angular.module('MenuControllerModule' ,['ngMaterial', 'loginServiceModule','repositoryServiceModule','issueServiceModule','milestoneServiceModule','logoutServiceModule','labelServiceModule']);
 
-menuControllerModule.controller('MenuController',[ '$scope','$mdSidenav','loginService','repositoryService','issueService','milestoneService',  function($scope , $mdSidenav, loginService,repositoryService,issueService,milestoneService){
+menuControllerModule.controller('MenuController',[ '$scope','$mdSidenav','loginService','logoutService','repositoryService','issueService','milestoneService','labelService',
+    function($scope , $mdSidenav, loginService,logoutService,repositoryService,issueService,milestoneService,labelService){
     $scope.title = "Github Project";
     $scope.loginService = loginService;
+    $scope.logoutService = logoutService;
     $scope.repositoryService = repositoryService;
     $scope.issueService = issueService;
 
@@ -16,6 +18,7 @@ menuControllerModule.controller('MenuController',[ '$scope','$mdSidenav','loginS
         repositoryService.ctx.selected = repository;
         issueService.getIssues();
         milestoneService.getMilestones();
+        labelService.getRepositoryLabels(repository);
     };
 
     $scope.addRepository = function($event){
