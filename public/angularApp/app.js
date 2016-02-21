@@ -46,20 +46,20 @@ app.config([ '$routeProvider','$httpProvider', function($routeProvider,$httpProv
 
 app.config(function($mdThemingProvider) {
 
-	var myRed = $mdThemingProvider.extendPalette('red', {
+	var accent = $mdThemingProvider.extendPalette('indigo', {
 
 	});
 
-	var myDeepOrange = $mdThemingProvider.extendPalette('deep-orange', {
+	var primary = $mdThemingProvider.extendPalette('teal', {
 
 	});
 
-	$mdThemingProvider.definePalette('my-red', myRed);
-	$mdThemingProvider.definePalette('my-deep-orange', myDeepOrange);
+	$mdThemingProvider.definePalette('my-primary', primary);
+	$mdThemingProvider.definePalette('my-accent', accent);
 
 	$mdThemingProvider.theme('default')
-		.primaryPalette('my-deep-orange')
-		.accentPalette('my-red');
+		.primaryPalette('my-primary')
+		.accentPalette('my-accent');
 
 
 });
